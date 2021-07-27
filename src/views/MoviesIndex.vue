@@ -6,6 +6,7 @@
       </router-link>
       <h2>{{ movie.year }}</h2>
       <p>{{ movie.plot }}</p>
+      <p>English?: {{ movie.english }}</p>
     </div>
   </div>
 </template>

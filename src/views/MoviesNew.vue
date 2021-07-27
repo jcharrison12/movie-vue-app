@@ -6,16 +6,19 @@
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
       <div>
-        <label>Title:</label>
-        <input type="text" v-model="newMovieParams.title" />
+        <label for="title">Title:</label>
+        <input id="title" type="text" v-model="newMovieParams.title" />
       </div>
       <div>
-        <label>Year:</label>
-        <input type="text" v-model="newMovieParams.year" />
+        <label for="year">Year:</label>
+        <input id="year" type="text" v-model="newMovieParams.year" />
       </div>
       <div>
-        <label>Plot:</label>
-        <input type="text" v-model="newMovieParams.plot" />
+        <label for="plot">Plot:</label>
+        <textarea id="plot" type="text" v-model="newMovieParams.plot"></textarea>
+        <br />
+        <label for="english">Is this movie in English? Check for yes</label>
+        <input type="checkbox" id="english" v-model="newMovieParams.english" />
       </div>
       <input type="submit" value="Submit" />
     </form>
