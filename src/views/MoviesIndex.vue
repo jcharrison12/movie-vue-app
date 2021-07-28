@@ -1,13 +1,27 @@
 <template>
   <div class="movies-index">
-    <div v-for="movie in movies" :key="movie.id">
+    <div class="row" v-for="movie in movies" :key="movie.id">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <router-link v-bind:to="`/movies/${movie.id}`">
+              <h5 class="card-title">{{ movie.title }}</h5>
+            </router-link>
+            <p class="card-text">{{ movie.year }}</p>
+            <p class="card-text">{{ movie.plot }}</p>
+            <!-- <a href="/movies/${movie.id}" class="btn btn-primary">More info</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div v-for="movie in movies" :key="movie.id">
       <router-link v-bind:to="`/movies/${movie.id}`">
         <h1>{{ movie.title }}</h1>
       </router-link>
       <h2>{{ movie.year }}</h2>
       <p>{{ movie.plot }}</p>
       <p>English?: {{ movie.english }}</p>
-    </div>
+    </div> -->
   </div>
 </template>
 <style></style>

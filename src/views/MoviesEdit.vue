@@ -17,8 +17,8 @@
         <label>Plot:</label>
         <input type="text" v-model="currentMovieParams.plot" />
       </div>
-      <input type="submit" value="Submit" />
-      <button v-on:click="destroyMovie()">Delete</button>
+      <input type="submit" class="btn btn-primary" value="Submit" />
+      <button type="button" class="btn btn-danger" v-on:click="destroyMovie()">Delete</button>
     </form>
   </div>
 </template>
