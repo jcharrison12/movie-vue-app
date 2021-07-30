@@ -1,6 +1,8 @@
 <template>
   <div class="movies-index">
-    <div class="row" v-for="movie in movies" :key="movie.id">
+    Search for a movie
+    <input v-model="filterText" />
+    <div class="row" v-for="movie in filterBy(movies, filterText)" :key="movie.id">
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
@@ -27,10 +29,13 @@
 <style></style>
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function () {
     return {
       movies: [],
+      filterText: "",
     };
   },
   created: function () {

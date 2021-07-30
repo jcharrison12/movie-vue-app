@@ -17,13 +17,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item">
+              <li v-if="!isLoggedIn()" class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/signup">Signup</a>
               </li>
-              <li class="nav-item">
+              <li v-if="!isLoggedIn()" class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
               </li>
-              <li class="nav-item">
+              <li v-if="isLoggedIn()" class="nav-item">
                 <a class="nav-link" href="/logout">Logout</a>
               </li>
               <li class="nav-item">
@@ -73,3 +73,12 @@
   color: #42b983;
 }
 </style>
+<script>
+export default {
+  methods: {
+    isLoggedIn: function () {
+      return localStorage.getItem("jwt");
+    },
+  },
+};
+</script>

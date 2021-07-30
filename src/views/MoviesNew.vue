@@ -16,6 +16,7 @@
       <div>
         <label for="plot">Plot:</label>
         <textarea id="plot" type="text" v-model="newMovieParams.plot"></textarea>
+        <small>{{ 100 - newMovieParams.plot.length }} characters remaining</small>
         <br />
         <label for="english">Is this movie in English? Check for yes</label>
         <input type="checkbox" id="english" v-model="newMovieParams.english" />
@@ -31,7 +32,7 @@ export default {
   data: function () {
     return {
       errors: [],
-      newMovieParams: {},
+      newMovieParams: { plot: "" },
     };
   },
   methods: {
